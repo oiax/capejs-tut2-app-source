@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.4'
+gem 'rails', '4.2.5'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -43,5 +43,5 @@ group :development, :test do
   gem 'spring'
 end
 
-gem 'sprockets-es6', '~> 0.7.0'
+gem 'sprockets-es6', '~> 0.8.0'
 gem 'acts_as_list'
