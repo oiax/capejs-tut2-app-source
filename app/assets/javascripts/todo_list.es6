@@ -1,6 +1,7 @@
 class TodoList extends Cape.Component {
   init() {
     this.agent = new TaskCollectionAgent(this);
+    this.createForm = new CreateForm(this);
     this.editingTask = null;
     this.agent.refresh();
   }
@@ -15,7 +16,7 @@ class TodoList extends Cape.Component {
       });
     });
     if (this.editingTask) this.renderUpdateForm(m);
-    else this.renderCreateForm(m);
+    else this.createForm.render(m);
   }
 
   renderTask(m, task) {
@@ -42,17 +43,6 @@ class TodoList extends Cape.Component {
     if (index === this.agent.objects.length - 1) m.class('disabled');
     else m.onclick(e => this.agent.patch('move_lower', task.id));
     m.span({ class: 'button' }, m => m.fa('arrow-circle-down'));
-  }
-
-  renderCreateForm(m) {
-    m.formFor('new_task', m => {
-      m.onkeyup(e => this.refresh());
-      m.textField('title', { value: this.val('new_task.title') }).sp();
-      m.attr({ disabled: this.val('new_task.title').trim() === '' });
-      m.onclick(e =>
-        this.agent.createTask(this.val('new_task.title', '')));
-      m.btn(`Add task #${ this.agent.objects.length + 1 }`);
-    });
   }
 
   renderUpdateForm(m) {
