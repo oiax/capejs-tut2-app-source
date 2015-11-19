@@ -1,0 +1,24 @@
+{
+  "name": "todo_list",
+  "version": "0.1.0",
+  "authors": [
+    "Tsutomu Kuroda <t-kuroda@oiax.jp>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "capejs": "~1.2.0",
+    "bootstrap": "=3.3.4",
+    "es6-promise": "~3.0.2",
+    "fetch": "~0.9.0",
+    "fontawesome": "~4.4.0",
+    "lodash": "~3.10.1"
+  }
+}
